@@ -1,13 +1,11 @@
 import streamlit as st
 import pandas as pd
 import os
-from dotenv import load_dotenv
 from openai import OpenAI
 
 # --- Configuración inicial ---
 st.set_page_config(page_title="Asistente de Análisis de Datasets", layout="centered")
 
-load_dotenv()
 api_key = os.getenv("API_KEY")
 
 client = OpenAI(api_key=api_key)
@@ -36,7 +34,7 @@ if uploaded_file and st.button("🔍 Analizar dataset"):
     try:
         df = pd.read_csv(uploaded_file)
 
-        # 🔥 OPTIMIZACIÓN: solo info esencial
+    
         info = f"""
 Columnas: {list(df.columns)}
 Tipos de datos: {df.dtypes.to_dict()}
