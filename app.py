@@ -1,14 +1,11 @@
 import streamlit as st
 import pandas as pd
-import os
 from openai import OpenAI
 
 # --- Configuración inicial ---
 st.set_page_config(page_title="Asistente de Análisis de Datasets", layout="centered")
 
-api_key = os.getenv("API_KEY")
-
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key="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")
 
 # --- UI ---
 st.title("📊 Asistente para Análisis de Datasets con IA")
